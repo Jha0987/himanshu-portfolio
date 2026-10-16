@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Himanshu Kumar Jha - Software Engineer specializing in full-stack web development with React, Next.js, Node.js, Express, MongoDB, and PostgreSQL.",
 };
-
+//hi
 export default function RootLayout({
   children,
 }: {
