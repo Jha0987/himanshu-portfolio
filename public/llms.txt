@@ -1,0 +1,42 @@
+# Himanshu Kumar Jha - Portfolio
+> Software Engineer & Full-Stack Developer specializing in clean web applications, REST APIs, and scalable backend architecture.
+
+## Identity & Professional Overview
+- Name: Himanshu Kumar Jha
+- Location: India
+- Email: hjha8609@gmail.com
+- GitHub: https://github.com/Jha0987
+- LinkedIn: https://www.linkedin.com/in/himanshu-kumar-jha-48b568351
+- Portfolio: https://himanshu-portfolio-him-e35c.vercel.app/
+- Resume: https://himanshu-portfolio-him-e35c.vercel.app/resume.pdf
+
+## Core Skills
+- Languages: JavaScript, TypeScript, Python, C++, Java, SQL
+- Frontend: React, Next.js, HTML5, CSS3/SCSS, Tailwind CSS, GSAP
+- Backend: Node.js, Express.js, REST APIs, Socket.IO, JWT Authentication
+- Databases: PostgreSQL, MongoDB, Drizzle ORM, Prisma
+- Tools: Git, GitHub, Docker, Postman, Vercel
+
+## Featured Projects
+1. AI Mock Interviewer
+   - Dynamic Gemini AI question generation, automated answer scoring, and feedback tracking.
+   - Stack: Next.js, React, PostgreSQL, Drizzle ORM, Clerk, Gemini API, Tailwind CSS.
+   - Demo: https://ai-mock-interviewer-kappa-green.vercel.app
+   - Repository: https://github.com/Jha0987/AI-Mock-Interviewer
+
+2. Telecom Deployment & NOC Management System
+   - Telecom site commissioning, configuration checklists, real-time alarm monitoring, role-based access.
+   - Stack: React, Node.js, Express.js, Socket.IO, JWT, Tailwind CSS.
+   - Demo: https://kanad-network-g65jaunad-him-e35c.vercel.app
+   - Repository: https://github.com/Jha0987/Kanad-Network
+
+3. Job Search Portal
+   - Job discovery and application workflows with advanced filtering, validation, and REST API integration.
+   - Stack: React, Vite, JavaScript, Tailwind CSS.
+   - Repository: https://github.com/Jha0987/JobSearchPortal
+
+## Experience & Education
+- Software Development Intern, DoorPay: Next.js/React dashboard development, REST integration, defect resolution.
+- Software Engineering Intern, Kanad Networks Pvt. Ltd.: Telecom workflows, JWT authentication, RBAC, real-time telemetry.
+- B.Tech in Computer Science and Engineering, Parul Institute of Technology (CGPA: 8.7).
+- Research: "Design and Evaluation of an AI Based Adaptive Mock Interview System Using NLP and Real-Time Feedback Analysis" (Published in IJSRET).

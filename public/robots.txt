@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://himanshu-portfolio-him-e35c.vercel.app/sitemap.xml

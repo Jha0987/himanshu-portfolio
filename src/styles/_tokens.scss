@@ -1,0 +1,28 @@
+// Global Design Tokens matching reference
+:root {
+  --bg: #030303;
+  --surface: #0b0b0b;
+  --surface-raised: #121212;
+  --surface-hover: #181818;
+  --ink: #f1eee8;
+  --ink-secondary: #d1cecb;
+  --muted: #aaa9a4;
+  --muted-dim: #71706c;
+  --blue: #ff8c59; // Warm accent
+  --blue-hover: #ffa073;
+  --blue-soft: rgba(255, 140, 89, 0.12);
+  --line: rgba(204, 220, 245, 0.14);
+  --line-strong: rgba(241, 238, 232, 0.22);
+  --gutter: clamp(24px, 5vw, 88px);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --gutter: 20px;
+  }
+}

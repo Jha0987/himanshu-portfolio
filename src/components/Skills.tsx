@@ -1,83 +1,104 @@
+"use client";
+
+import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
-import {
-  Code,
-  Layout,
-  Server,
-  Database,
-  Wrench,
-  Bot,
-  Terminal,
-} from "lucide-react";
 
 export default function Skills() {
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "Languages":
-        return Code;
-      case "Frontend":
-        return Layout;
-      case "Backend & Cloud":
-        return Server;
-      case "Databases & ORM":
-        return Database;
-      case "Tools & Ecosystem":
-        return Wrench;
-      case "AI & Integrations":
-        return Bot;
-      default:
-        return Terminal;
-    }
-  };
+  const { expertise } = PORTFOLIO_DATA;
+  const [expandedIndex, setExpandedIndex] = useState(0);
+
+  const activeExpertise = expertise[expandedIndex] || expertise[0];
 
   return (
-    <section id="skills" className="py-24 relative border-t border-slate-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-medium uppercase tracking-wider">
-            <Wrench className="w-3.5 h-3.5" />
-            Technical Toolkit
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Skills & Technologies
+    <section className="expertise chapter solid-section" id="expertise">
+      <div className="section-label">
+        <span>03 / HOW I THINK &amp; WORK</span>
+        <span>DEPTH MEETS EXECUTION</span>
+      </div>
+
+      <div className="expertise-grid expertise-studio">
+        <div className="expertise-intro">
+          <h2>
+            How I work.
+            <br />
+            <em>From requirement to reliable code.</em>
           </h2>
-          <p className="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed">
-            The core tools, languages, and frameworks I use to engineer robust full-stack applications.
-          </p>
+          <p className="muted">Select a discipline. Follow the architectural thinking.</p>
+
+          <div className="thinking-path" aria-live="polite">
+            <span className="eyebrow">
+              <span className="signal-text">
+                <span className="sr-only">{activeExpertise.title}</span>
+                <span aria-hidden="true" className="signal-text-size">
+                  {activeExpertise.title}
+                </span>
+                <span aria-hidden="true" className="signal-text-live">
+                  {activeExpertise.title}
+                </span>
+              </span>
+            </span>
+
+            <ol key={activeExpertise.id}>
+              {activeExpertise.steps.map((st, i) => (
+                <li key={i} style={{ animationDelay: `${i * 70}ms` }}>
+                  <span>{st.step}</span>
+                  {st.text}
+                </li>
+              ))}
+            </ol>
+
+            <a href="#work" className="text-link">
+              Explore the engineering ↗
+            </a>
+          </div>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PORTFOLIO_DATA.skills.map((cat, idx) => {
-            const Icon = getCategoryIcon(cat.category);
+        <div className="expertise-list">
+          {expertise.map((item, idx) => {
+            const isExpanded = expandedIndex === idx;
 
             return (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-all hover:-translate-y-1 group flex flex-col justify-between"
+              <article
+                key={item.id}
+                className={`expertise-item ${isExpanded ? "expanded" : ""}`}
               >
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
-                      {cat.category}
-                    </h3>
-                  </div>
+                <h3>
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`expertise-${idx}`}
+                    onClick={() => setExpandedIndex(isExpanded ? -1 : idx)}
+                  >
+                    <span>
+                      <small className="eyebrow">
+                        <span className="signal-text">
+                          <span className="sr-only">
+                            {item.number} / {item.title.toUpperCase()}
+                          </span>
+                          <span aria-hidden="true" className="signal-text-size">
+                            {item.number} / {item.title.toUpperCase()}
+                          </span>
+                          <span aria-hidden="true" className="signal-text-live">
+                            {item.number} / {item.title.toUpperCase()}
+                          </span>
+                        </span>
+                      </small>
+                      {item.lead}
+                    </span>
+                    {isExpanded ? <Minus size={24} /> : <Plus size={24} />}
+                  </button>
+                </h3>
 
-                  <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-200 border border-slate-700/60 hover:border-cyan-500/40 hover:text-white transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                <div
+                  id={`expertise-${idx}`}
+                  className="expertise-body"
+                  hidden={!isExpanded}
+                >
+                  <p>{item.description}</p>
+                  <p className="strengths">{item.strengths}</p>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
