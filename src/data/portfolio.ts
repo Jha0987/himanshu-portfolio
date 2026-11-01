@@ -33,6 +33,7 @@ export interface Certification {
   category: "all" | "certifications" | "research";
   iconType: "shield" | "award" | "network" | "cpu" | "code" | "file";
   credentialUrl?: string;
+  imageUrl?: string;
 }
 
 export interface SkillGroup {
@@ -335,6 +336,7 @@ export const PORTFOLIO_DATA = {
       details: "Elite Certificate • Score: 76% · TCP/IP, Routing Protocols, Subnetting, Socket Programming & Flow Control.",
       category: "certifications",
       iconType: "network",
+      imageUrl: "/Certificates/Computer Networks and Internet Protocol.png",
     },
     {
       id: "nptel-iot",
@@ -343,6 +345,7 @@ export const PORTFOLIO_DATA = {
       details: "Elite Certificate • Score: 77% · Sensor Networking, Protocols (MQTT, HTTP), Edge Compute & Data Pipelines.",
       category: "certifications",
       iconType: "cpu",
+      imageUrl: "/Certificates/Introduction to Internet of Things (IoT).png",
     },
     {
       id: "cisco-cyber",
@@ -351,6 +354,7 @@ export const PORTFOLIO_DATA = {
       details: "Network Defense, Threat Analysis, Cryptography & Secure System Architectures.",
       category: "certifications",
       iconType: "shield",
+      imageUrl: "/Certificates/Introduction to cybersecurity.png",
     },
     {
       id: "cisco-entrepreneur",
@@ -359,6 +363,7 @@ export const PORTFOLIO_DATA = {
       details: "Technology Product Lifecycle, Problem Identification & Solution Validation.",
       category: "certifications",
       iconType: "award",
+      imageUrl: "/Certificates/Discovering Entrepreneurship.png",
     },
     {
       id: "hackathon",
@@ -367,6 +372,7 @@ export const PORTFOLIO_DATA = {
       details: "Certificate of Technical Innovation & Hackathon Participation.",
       category: "certifications",
       iconType: "code",
+      imageUrl: "/Certificates/Vadodara Hackathon 4.0.png",
     },
   ] as Certification[],
 
